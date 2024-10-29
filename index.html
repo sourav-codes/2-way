@@ -1,0 +1,91 @@
+<!--
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
+-->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/2000ae6722.js" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&family=Open+Sans:wght@300;500;600;700;800&family=Roboto:ital,wght@0,400;0,900;1,900&display=swap"
+    rel="stylesheet">
+  <title>Realtime API with openai-node SDK</title>
+</head>
+
+<body>
+  <div id="app">
+    <form>
+      <div class="container">
+        <div class="header">Spotlight </div>
+        <div id="received-text-container">
+          <!-- <p class="info">--Session started--</p>
+          <p class="user">Hi</p>
+          <p class="gpt">
+            Hello, How are you, Hello, How are you, Hello, How are you, Hello, How are you, Hello, How are you, Hello,
+            How are you, Hello, How are you, Hello, How are you,
+          </p> -->
+        </div>
+        <div class="controls">
+          <div class="button-group">
+            <button id="start-recording" class="start-btn" type="button">
+              <span id="red-circle" ></span>
+            </button>
+            <!-- disabled="true" -->
+            <button id="stop-recording" class="stop-btn hidden" type="button" >
+              <!-- <i class="fa-solid fa-xmark"></i> -->
+              <span id="black-box" ></span>
+            </button>
+          </div>
+          <div class="input-group hidden">
+            <label for="endpoint">Endpoint</label>
+            <input id="endpoint" type="text" placeholder="Enter resource/endpoint URL" />
+            <div class="toggle-group">
+              <label for="azure-toggle">Azure OpenAI</label>
+              <input id="azure-toggle" type="checkbox" checked />
+            </div>
+            <div class="hidden">
+              <label for="api-key">API Key</label>
+              <input id="api-key" type="password" placeholder="Enter API key" />
+            </div>
+            <label for="deployment-or-model">Deployment</label>
+            <input id="deployment-or-model" type="text"
+              placeholder="Enter deployment/model, e.g. gpt-4o-realtime-preview-2024-10-01" />
+          </div>
+          <div class="input-group hidden">
+            <div class="input-group hidden">
+              <label for="session-instructions">System Message</label>
+              <textarea id="session-instructions"
+                placeholder="Optional instructions for the session, e.g. 'You talk like a pirate.'" rows="4"></textarea>
+            </div>
+            <div class="input-group hidden">
+              <label for="temperature">Temperature</label>
+              <input id="temperature" type="number" min="0.6" max="1.2" step="0.05"
+                placeholder="0.6-1.2 (default 0.8)" />
+            </div>
+            <div class="input-group hidden">
+              <label for="voice">Voice</label>
+              <select id="voice">
+                <option></option>
+                <option>alloy</option>
+                <option>echo</option>
+                <option>shimmer</option>
+              </select>
+            </div>
+          </div>
+        </div>
+    </form>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
